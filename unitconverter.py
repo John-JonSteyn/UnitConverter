@@ -1,4 +1,4 @@
-# Created by John-Jon Steyn
+# Created by Bearded-Viking
 from calendar import day_abbr
 import sys
 counterError = 0
