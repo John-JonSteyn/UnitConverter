@@ -4,7 +4,8 @@ import sys
 counterError = 0
 
 def endProgram():
-    sys.exit("\nThank you for using the Unit Converter, have a great day. XD")
+    print("\nThank you for using the Unit Converter, have a great day. XD")
+    sys.exit()
 
 def convertDistance(unit, valueGiven):
     valueGiven = float(valueGiven) #ensures float for formating
@@ -45,7 +46,7 @@ def convertDistance(unit, valueGiven):
         ft = valueGiven
         mi = ft / 5280
         impToMet()
-    elif unit == "in":
+    elif unit == "inch":
         inch = valueGiven
         mi = inch / 63360
     else:
@@ -74,8 +75,8 @@ def convertDistance(unit, valueGiven):
         unit = "Yards (yd)"
     elif unit == "ft":
         unit = "Feet (ft)"
-    elif unit == "in":
-        unit = "Inches (in)"
+    elif unit == "inch":
+        unit = "Inches (inch)"
     
     print(f"{valueGiven} {unit} is converted as:\n")
     print("Kilometers:\t\t{0:.4f} km".format(km))
@@ -85,14 +86,14 @@ def convertDistance(unit, valueGiven):
     print("Miles:\t\t\t{0:.4f} mi".format(mi))
     print("Yards:\t\t\t{0:.4f} yd".format(yd))
     print("Feet:\t\t\t{0:.4f} ft".format(ft))
-    print("Inch:\t\t\t{0:.4f} in".format(inch))
+    print("Inch:\t\t\t{0:.4f} inch".format(inch))
 
     selectCatagory()
 
 def selectDistance():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Kilometre | Meter | Centimetre | Millimetre | Mile | Yard | Foot | Inch\t\t|| Quit\n")
+    unit = input("Kilometer | Meter | Centimetre | Millimetre | Mile | Yard | Foot | Inch\t\t|| Quit\n")
     if unit == "Quit":
         endProgram()
     valueReceived = input("Please enter the value\t\t|| Quit\n")
@@ -111,6 +112,8 @@ def selectDistance():
         convertDistance("mi", valueReceived)
     elif unit == "Yard":
         convertDistance("yd", valueReceived)
+    elif unit == "Foot":
+        convertDistance("ft", valueReceived)
     elif unit == "Inch":
         convertDistance("inch", valueReceived)
     else:
@@ -195,7 +198,7 @@ def convertMass(unit, valueGiven):
 def selectMass():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input ("Ton | Kilogram | Gram | Milligram | Stone | Pound | Ounce\t\t|| Quit\n")
+    unit = input ("Ton | Kilogram | Gram | Milligram | Stone | Pounds | Ounce\t\t|| Quit\n")
     if unit == "Quit":
         endProgram()
     valueReceived = input("Please enter the value\t\t|| Quit\n")
@@ -351,7 +354,7 @@ def selectCatagory():
     elif selection == "Mass":
         selectMass()
     elif selection == "Temperature":
-        selectTemperature
+        selectTemperature()
     elif selection == "Time":
         selectTime()
     elif selection == "Quit":
