@@ -1,4 +1,3 @@
-# Created by Bearded-Viking
 from calendar import day_abbr
 import sys
 counterError = 0
@@ -78,11 +77,11 @@ def convertDistance(unit, valueGiven):
     elif unit == "inch":
         unit = "Inches (inch)"
     
-    print(f"{valueGiven} {unit} is converted as:\n")
+    print(f"\n{valueGiven} {unit} is converted as:\n")
     print("Kilometers:\t\t{0:.4f} km".format(km))
-    print("Meters:\t\t{0:.4f} m".format(m))
-    print("Centimeters:{0:.4f} cm".format(cm))
-    print("Millimeters:{0:.4f} mm".format(mm))
+    print("Meters:\t\t\t{0:.4f} m".format(m))
+    print("Centimeters:\t\t{0:.4f} cm".format(cm))
+    print("Millimeters:\t\t{0:.4f} mm".format(mm))
     print("Miles:\t\t\t{0:.4f} mi".format(mi))
     print("Yards:\t\t\t{0:.4f} yd".format(yd))
     print("Feet:\t\t\t{0:.4f} ft".format(ft))
@@ -256,7 +255,7 @@ def convertTemperature(unit, valueGiven):
     
     print(f"{valueGiven} {unit} is converted as:\n")
     print("Degrees Celcius:\t{0:.2f} 'C".format(c))
-    print("Kelvin:\t\t\t\t{0:.2f} K".format(k))
+    print("Kelvin:\t\t\t{0:.2f} K".format(k))
     print("Degrees Farenheit:\t{0:.2f} 'F".format(f))
     print("Degrees Rankine:\t{0:.2f} 'R".format(r))
 
