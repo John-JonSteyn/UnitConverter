@@ -10,12 +10,12 @@
 
 <!-- Title -->
 <br />
-  <h3 align="center">Unit Converter - The Web-Based Task Manager</h3>
+  <h3 align="center">Unit Converter - A Terminal-based Unit Converter</h3>
   
   <hr>
   
   <p align="center">
-    Terminal based, funcion-heavy and simplistic unit converter for distances, masses, temperatures and time conversions. 
+    Terminal-based, funcion-heavy and simplistic unit converter for distances, masses, temperatures and time conversions. 
     <br />
     <a href="https://github.com/Bearded-Viking/UnitConverter/"><strong>View Source Code »</strong></a>
     <br />
