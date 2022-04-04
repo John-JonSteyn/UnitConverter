@@ -15,7 +15,7 @@
   <hr>
   
   <p align="center">
-    Terminal-based, funcion-heavy and simplistic unit converter for distances, masses, temperatures and time conversions. 
+    Funcion-heavy and simplistic unit converter for distances, masses, temperatures and time conversions. 
     <br />
     <a href="https://github.com/Bearded-Viking/UnitConverter/"><strong>View Source Code »</strong></a>
     <br />
