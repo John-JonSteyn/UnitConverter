@@ -208,9 +208,9 @@ You can also quit the program at any time by typing:
 - [x] Fixed Temperature-function call
 - [x] Revised system exit
 - [x] Add back to top links
-- [] Remove Case-Sensitivity
-- [] Improve Output Appearance
-- [] Add option to utilise acronyms as input
+- [ ] Remove Case-Sensitivity
+- [ ] Improve Output Appearance
+- [ ] Add option to utilise acronyms as input
 
 See the [open issues](https://github.com/Bearded-Viking/UnitConverter/issues) for a full list of proposed features (and known issues).
 
