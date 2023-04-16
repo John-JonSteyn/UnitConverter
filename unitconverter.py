@@ -7,7 +7,7 @@ def endProgram():
     sys.exit()
 
 def convertDistance(unit, valueGiven):
-    valueGiven = float(valueGiven) #ensures float for formating
+    valueGiven = float(valueGiven) #ensures float for formatting
     km = m = cm = mm = mi = yd = ft = inch = 0 #inch is used since "in" is a keyword
 
     #Implemented for future precision
@@ -92,7 +92,7 @@ def convertDistance(unit, valueGiven):
 def selectDistance():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Kilometer | Meter | Centimetre | Millimetre | Mile | Yard | Foot | Inch\t\t|| Quit\n").capitalize()
+    unit = input("Kilometer | Meter | Centimeter | Millimeter | Mile | Yard | Foot | Inch\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
     valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
@@ -103,9 +103,9 @@ def selectDistance():
         convertDistance("km", valueReceived)
     elif unit == "Meter":
         convertDistance("m", valueReceived)
-    elif unit == "Centimetre":
+    elif unit == "Centimeter":
         convertDistance("cm", valueReceived)
-    elif unit == "Millimetre":
+    elif unit == "Millimeter":
         convertDistance("mm", valueReceived)
     elif unit == "Mile":
         convertDistance("mi", valueReceived)
@@ -245,18 +245,18 @@ def convertTemperature(unit, valueGiven):
     r = (c + 273.15) *1.8
 
     if unit == 'c':
-        unit = "Degrees Celcius ('C)"
+        unit = "Degrees Celsius ('C)"
     elif unit == 'k':
         unit = "Kelvin (K)"
     elif unit == 'f':
-        unit = "Degrees Farenheit ('F)"
+        unit = "Degrees Fahrenheit ('F)"
     elif unit == 'r':
         unit = "Degrees Rankine ('R)"
     
     print(f"{valueGiven} {unit} is converted as:\n")
-    print("Degrees Celcius:\t{0:.2f} 'C".format(c))
+    print("Degrees Celsius:\t{0:.2f} 'C".format(c))
     print("Kelvin:\t\t\t{0:.2f} K".format(k))
-    print("Degrees Farenheit:\t{0:.2f} 'F".format(f))
+    print("Degrees Fahrenheit:\t{0:.2f} 'F".format(f))
     print("Degrees Rankine:\t{0:.2f} 'R".format(r))
 
     selectCategory()
@@ -264,18 +264,18 @@ def convertTemperature(unit, valueGiven):
 def selectTemperature():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Celcius | Kelvin | Farenheit | Rankine\t\t|| Quit\n").capitalize()
+    unit = input("Celsius | Kelvin | Fahrenheit | Rankine\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
     valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
     
-    if   unit == "Celcius":
+    if   unit == "Celsius":
         convertTemperature('c', valueReceived)
     elif unit == "Kelvin":
         convertTemperature('k', valueReceived)
-    elif unit == "Farenheit":
+    elif unit == "Fahrenheit":
         convertTemperature('f', valueReceived)
     elif unit == "Rankine":
         convertTemperature('r', valueReceived)
@@ -421,7 +421,7 @@ def selectSpeed():
 
 def selectCategory():
     selection = ""
-    print("\n\nPlease select a catagory by typing the listed word.")
+    print("\n\nPlease select a category by typing the listed word.")
     selection = input("Distance | Mass | Temperature | Time | Speed\t\t|| Quit\n").capitalize()
     if   selection == "Distance":
         selectDistance()
@@ -436,12 +436,12 @@ def selectCategory():
     elif selection == "Quit":
         endProgram()
     else:
-        print("It seems you selected an unsupported catagory, please try again")
+        print("It seems you selected an unsupported category, please try again")
         selectCategory()
 
 
 #startOfProgram
-print("\nThis program is created for the purposes of converting Units of Meassurement")
+print("\nThis program is created for the purposes of converting Units of Measurement")
 print("Enter \"Quit\" at any time to terminate the program manually.")
 print("In order to protect the user, the program will terminate if invalid input is detected three (3) times, consecutively.")
 print("Please note that this program is case  sensitive.")
