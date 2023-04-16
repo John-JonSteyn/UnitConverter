@@ -87,7 +87,7 @@ def convertDistance(unit, valueGiven):
     print("Feet:\t\t\t{0:.4f} ft".format(ft))
     print("Inch:\t\t\t{0:.4f} inch".format(inch))
 
-    selectCatagory()
+    selectCategory()
 
 def selectDistance():
     unit, valueReceived = "", 0
@@ -192,7 +192,7 @@ def convertMass(unit, valueGiven):
     print("Pounds:\t\t{0:.4f} lbs".format(lbs))
     print("Ounces:\t\t{0:.4f} oz".format(oz))
 
-    selectCatagory()
+    selectCategory()
 
 def selectMass():
     unit, valueReceived = "", 0
@@ -259,7 +259,7 @@ def convertTemperature(unit, valueGiven):
     print("Degrees Farenheit:\t{0:.2f} 'F".format(f))
     print("Degrees Rankine:\t{0:.2f} 'R".format(r))
 
-    selectCatagory()
+    selectCategory()
 
 def selectTemperature():
     unit, valueReceived = "", 0
@@ -320,7 +320,7 @@ def convertTime(unit, valueGiven):
     print("Minutes:\t{0:.1f}".format(min))
     print("Seconds:\t{0:.1f}".format(sec))
 
-    selectCatagory()
+    selectCategory()
 
 def selectTime():
     unit, valueReceived = "", 0
@@ -344,7 +344,7 @@ def selectTime():
         print("A proper unit was not selected, please try again.")
         selectTime()
 
-def selectCatagory():
+def selectCategory():
     selection = ""
     print("\n\nPlease select a catagory by typing the listed word.")
     selection = input("Distance | Mass | Temperature | Time\t\t|| Quit\n").capitalize()
@@ -360,7 +360,7 @@ def selectCatagory():
         endProgram()
     else:
         print("It seems you selected an unsupported catagory, please try again")
-        selectCatagory()
+        selectCategory()
 
 
 #startOfProgram
@@ -368,4 +368,4 @@ print("\nThis program is created for the purposes of converting Units of Meassur
 print("Enter \"Quit\" at any time to terminate the program manually.")
 print("In order to protect the user, the program will terminate if invalid input is detected three (3) times, consecutively.")
 print("Please note that this program is case  sensitive.")
-selectCatagory()
+selectCategory()
