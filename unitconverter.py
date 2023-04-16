@@ -344,10 +344,85 @@ def selectTime():
         print("A proper unit was not selected, please try again.")
         selectTime()
 
+def convertSpeed(unit, valueGiven):
+    valueGiven = float(valueGiven)
+    km = mi = mph = kph = mps = kt = 0
+
+    def metToImp():   #Metric To Imperial
+        nonlocal km, mi
+        mi = km / 1.609347218694
+    def impToMet():   #Imperial to Metric
+        nonlocal mi, km
+        km = mi * 1.609347218694
+
+    if unit == "mph":
+        mph = valueGiven
+        kph = valueGiven * 1.609344
+        mps = valueGiven * 0.44704
+        kt =  valueGiven * 0.86897624223256
+    elif unit == "kph":
+        mph = valueGiven * 0.621371192
+        kph = valueGiven 
+        mps = valueGiven * 0.277777778
+        kt = valueGiven / 1.852
+    elif unit == "mps":
+        mph = valueGiven * 2.2369
+        kph = valueGiven * 3.6
+        mps = valueGiven
+        kt =  valueGiven * 1.9438444924406
+    elif unit == "kt":
+        mph = valueGiven * 1.15078
+        kph = valueGiven * 1.852
+        mps = valueGiven * 0.51444
+        kt = valueGiven 
+    else:
+        print("Error: Invalid unit selected. Please ensure that you select a supported unit.")
+        return
+    
+
+    if unit == "mph":
+        unit = "Miles Per Hour (mps)"
+    if unit == "kph":
+        unit = "Kilometers Per Hour (kph)"
+    if unit == "mps":
+        unit = "Meters Per Second (mps)"
+    if unit == "kt":
+        unit = "Knots (kt)"
+    
+    print(f"{valueGiven} {unit} is converted as:\n")
+    print("Mph:\t\t{0:.1f}".format(mph))
+    print("Km/h:\t\t{0:.1f}".format(kph))
+    print("m/s:\t\t{0:.1f}".format(mps))
+    print("Knot:\t\t{0:.1f}".format(kt))
+
+
+def selectSpeed():
+    unit, valueReceived = "", 0
+    print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
+    unit = input("mph | kph | mps | kt\t\t|| Quit\n").lower()
+    if unit == "Quit":
+        endProgram()
+    valueReceived = input("Please enter the value\t\t|| Quit\n").lower()
+    if unit == "Quit":
+        endProgram()
+    
+    if   unit == "mph":
+        convertSpeed("mph", valueReceived)
+    elif unit == "kph":
+        convertSpeed("kph", valueReceived)
+    elif unit == "mps":
+        convertSpeed("mps", valueReceived)
+    elif unit == "kt":
+        convertSpeed("kt", valueReceived)
+    else:
+        print("A proper unit was not selected, please try again.")
+        selectSpeed()
+
+
 def selectCategory():
     selection = ""
     print("\n\nPlease select a catagory by typing the listed word.")
-    selection = input("Distance | Mass | Temperature | Time\t\t|| Quit\n").capitalize()
+    selection = input("Distance | Mass | Temperature | Time | Speed\t\t|| Quit\n").capitalize()
     if   selection == "Distance":
         selectDistance()
     elif selection == "Mass":
@@ -356,6 +431,8 @@ def selectCategory():
         selectTemperature()
     elif selection == "Time":
         selectTime()
+    elif selection == "Speed":
+        selectSpeed()
     elif selection == "Quit":
         endProgram()
     else:
