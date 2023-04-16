@@ -92,10 +92,10 @@ def convertDistance(unit, valueGiven):
 def selectDistance():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Kilometer | Meter | Centimetre | Millimetre | Mile | Yard | Foot | Inch\t\t|| Quit\n")
+    unit = input("Kilometer | Meter | Centimetre | Millimetre | Mile | Yard | Foot | Inch\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
     
@@ -197,10 +197,10 @@ def convertMass(unit, valueGiven):
 def selectMass():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input ("Ton | Kilogram | Gram | Milligram | Stone | Pounds | Ounce\t\t|| Quit\n")
+    unit = input ("Ton | Kilogram | Gram | Milligram | Stone | Pounds | Ounce\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
 
@@ -264,10 +264,10 @@ def convertTemperature(unit, valueGiven):
 def selectTemperature():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Celcius | Kelvin | Farenheit | Rankine\t\t|| Quit\n")
+    unit = input("Celcius | Kelvin | Farenheit | Rankine\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
     
@@ -325,10 +325,10 @@ def convertTime(unit, valueGiven):
 def selectTime():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Day | Hour | Minute | Second\t\t|| Quit\n")
+    unit = input("Day | Hour | Minute | Second\t\t|| Quit\n").capitalize().capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize().capitalize()
     if unit == "Quit":
         endProgram()
     
@@ -347,7 +347,7 @@ def selectTime():
 def selectCatagory():
     selection = ""
     print("\n\nPlease select a catagory by typing the listed word.")
-    selection = input("Distance | Mass | Temperature | Time\t\t|| Quit\n")
+    selection = input("Distance | Mass | Temperature | Time\t\t|| Quit\n").capitalize()
     if   selection == "Distance":
         selectDistance()
     elif selection == "Mass":
