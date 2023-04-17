@@ -52,6 +52,7 @@
         <li><a href="#mass">Mass</a></li>
         <li><a href="#temperature">Temperature</a></li>
         <li><a href="#time">Time</a></li>
+        <li><a href="#speed">Speed</a></li>
         <li><a href="#quit">Quit</a></li>
     </ul>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -99,6 +100,11 @@ Unit Converter supports the following Units of Meassurement:
   * Hours (hr)
   * Minutes (min)
   * Seconds (sec)
+5. Speed
+  * Mile Per Hour (mph)
+  * Kilometers Per Hour (kph)
+  * Meters Per Second (mps)
+  * Knots (kt)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -194,6 +200,10 @@ As is the case with Temperature:
 And, not surprisingly, Time is no different:
 [![Time][screenshot-time]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotTime.png))
 
+### Speed
+Same with speed. Who would've thought:
+\<Insert Screenshot here\>
+
 ### Quit
 You can also quit the program at any time by typing:
   ```sh
@@ -208,7 +218,7 @@ You can also quit the program at any time by typing:
 - [x] Fixed Temperature-function call
 - [x] Revised system exit
 - [x] Add back to top links
-- [ ] Remove Case-Sensitivity
+- [x] Remove Case-Sensitivity
 - [ ] Improve Output Appearance
 - [ ] Add option to utilise acronyms as input
 
