@@ -444,5 +444,4 @@ def selectCategory():
 print("\nThis program is created for the purposes of converting Units of Measurement")
 print("Enter \"Quit\" at any time to terminate the program manually.")
 print("In order to protect the user, the program will terminate if invalid input is detected three (3) times, consecutively.")
-print("Please note that this program is case  sensitive.")
 selectCategory()
