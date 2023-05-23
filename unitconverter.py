@@ -7,7 +7,7 @@ def endProgram():
     sys.exit()
 
 def convertDistance(unit, valueGiven):
-    valueGiven = float(valueGiven) #ensures float for formating
+    valueGiven = float(valueGiven) #ensures float for formatting
     km = m = cm = mm = mi = yd = ft = inch = 0 #inch is used since "in" is a keyword
 
     #Implemented for future precision
@@ -87,15 +87,15 @@ def convertDistance(unit, valueGiven):
     print("Feet:\t\t\t{0:.4f} ft".format(ft))
     print("Inch:\t\t\t{0:.4f} inch".format(inch))
 
-    selectCatagory()
+    selectCategory()
 
 def selectDistance():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Kilometer | Meter | Centimetre | Millimetre | Mile | Yard | Foot | Inch\t\t|| Quit\n")
+    unit = input("Kilometer | Meter | Centimeter | Millimeter | Mile | Yard | Foot | Inch\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
     
@@ -103,9 +103,9 @@ def selectDistance():
         convertDistance("km", valueReceived)
     elif unit == "Meter":
         convertDistance("m", valueReceived)
-    elif unit == "Centimetre":
+    elif unit == "Centimeter":
         convertDistance("cm", valueReceived)
-    elif unit == "Millimetre":
+    elif unit == "Millimeter":
         convertDistance("mm", valueReceived)
     elif unit == "Mile":
         convertDistance("mi", valueReceived)
@@ -192,15 +192,15 @@ def convertMass(unit, valueGiven):
     print("Pounds:\t\t{0:.4f} lbs".format(lbs))
     print("Ounces:\t\t{0:.4f} oz".format(oz))
 
-    selectCatagory()
+    selectCategory()
 
 def selectMass():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input ("Ton | Kilogram | Gram | Milligram | Stone | Pounds | Ounce\t\t|| Quit\n")
+    unit = input ("Ton | Kilogram | Gram | Milligram | Stone | Pounds | Ounce\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
 
@@ -245,37 +245,37 @@ def convertTemperature(unit, valueGiven):
     r = (c + 273.15) *1.8
 
     if unit == 'c':
-        unit = "Degrees Celcius ('C)"
+        unit = "Degrees Celsius ('C)"
     elif unit == 'k':
         unit = "Kelvin (K)"
     elif unit == 'f':
-        unit = "Degrees Farenheit ('F)"
+        unit = "Degrees Fahrenheit ('F)"
     elif unit == 'r':
         unit = "Degrees Rankine ('R)"
     
     print(f"{valueGiven} {unit} is converted as:\n")
-    print("Degrees Celcius:\t{0:.2f} 'C".format(c))
+    print("Degrees Celsius:\t{0:.2f} 'C".format(c))
     print("Kelvin:\t\t\t{0:.2f} K".format(k))
-    print("Degrees Farenheit:\t{0:.2f} 'F".format(f))
+    print("Degrees Fahrenheit:\t{0:.2f} 'F".format(f))
     print("Degrees Rankine:\t{0:.2f} 'R".format(r))
 
-    selectCatagory()
+    selectCategory()
 
 def selectTemperature():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Celcius | Kelvin | Farenheit | Rankine\t\t|| Quit\n")
+    unit = input("Celsius | Kelvin | Fahrenheit | Rankine\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize()
     if unit == "Quit":
         endProgram()
     
-    if   unit == "Celcius":
+    if   unit == "Celsius":
         convertTemperature('c', valueReceived)
     elif unit == "Kelvin":
         convertTemperature('k', valueReceived)
-    elif unit == "Farenheit":
+    elif unit == "Fahrenheit":
         convertTemperature('f', valueReceived)
     elif unit == "Rankine":
         convertTemperature('r', valueReceived)
@@ -320,15 +320,15 @@ def convertTime(unit, valueGiven):
     print("Minutes:\t{0:.1f}".format(min))
     print("Seconds:\t{0:.1f}".format(sec))
 
-    selectCatagory()
+    selectCategory()
 
 def selectTime():
     unit, valueReceived = "", 0
     print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
-    unit = input("Day | Hour | Minute | Second\t\t|| Quit\n")
+    unit = input("Day | Hour | Minute | Second\t\t|| Quit\n").capitalize().capitalize()
     if unit == "Quit":
         endProgram()
-    valueReceived = input("Please enter the value\t\t|| Quit\n")
+    valueReceived = input("Please enter the value\t\t|| Quit\n").capitalize().capitalize()
     if unit == "Quit":
         endProgram()
     
@@ -344,10 +344,85 @@ def selectTime():
         print("A proper unit was not selected, please try again.")
         selectTime()
 
-def selectCatagory():
+def convertSpeed(unit, valueGiven):
+    valueGiven = float(valueGiven)
+    km = mi = mph = kph = mps = kt = 0
+
+    def metToImp():   #Metric To Imperial
+        nonlocal km, mi
+        mi = km / 1.609347218694
+    def impToMet():   #Imperial to Metric
+        nonlocal mi, km
+        km = mi * 1.609347218694
+
+    if unit == "mph":
+        mph = valueGiven
+        kph = valueGiven * 1.609344
+        mps = valueGiven * 0.44704
+        kt =  valueGiven * 0.86897624223256
+    elif unit == "kph":
+        mph = valueGiven * 0.621371192
+        kph = valueGiven 
+        mps = valueGiven * 0.277777778
+        kt = valueGiven / 1.852
+    elif unit == "mps":
+        mph = valueGiven * 2.2369
+        kph = valueGiven * 3.6
+        mps = valueGiven
+        kt =  valueGiven * 1.9438444924406
+    elif unit == "kt":
+        mph = valueGiven * 1.15078
+        kph = valueGiven * 1.852
+        mps = valueGiven * 0.51444
+        kt = valueGiven 
+    else:
+        print("Error: Invalid unit selected. Please ensure that you select a supported unit.")
+        return
+    
+
+    if unit == "mph":
+        unit = "Miles Per Hour (mps)"
+    if unit == "kph":
+        unit = "Kilometers Per Hour (kph)"
+    if unit == "mps":
+        unit = "Meters Per Second (mps)"
+    if unit == "kt":
+        unit = "Knots (kt)"
+    
+    print(f"{valueGiven} {unit} is converted as:\n")
+    print("Mph:\t\t{0:.1f}".format(mph))
+    print("Km/h:\t\t{0:.1f}".format(kph))
+    print("m/s:\t\t{0:.1f}".format(mps))
+    print("Knot:\t\t{0:.1f}".format(kt))
+
+
+def selectSpeed():
+    unit, valueReceived = "", 0
+    print("\n\nPlease select a unit to convert from by typing the listed unit.\n")
+    unit = input("mph | kph | mps | kt\t\t|| Quit\n").lower()
+    if unit == "Quit":
+        endProgram()
+    valueReceived = input("Please enter the value\t\t|| Quit\n").lower()
+    if unit == "Quit":
+        endProgram()
+    
+    if   unit == "mph":
+        convertSpeed("mph", valueReceived)
+    elif unit == "kph":
+        convertSpeed("kph", valueReceived)
+    elif unit == "mps":
+        convertSpeed("mps", valueReceived)
+    elif unit == "kt":
+        convertSpeed("kt", valueReceived)
+    else:
+        print("A proper unit was not selected, please try again.")
+        selectSpeed()
+
+
+def selectCategory():
     selection = ""
-    print("\n\nPlease select a catagory by typing the listed word.")
-    selection = input("Distance | Mass | Temperature | Time\t\t|| Quit\n")
+    print("\n\nPlease select a category by typing the listed word.")
+    selection = input("Distance | Mass | Temperature | Time | Speed\t\t|| Quit\n").capitalize()
     if   selection == "Distance":
         selectDistance()
     elif selection == "Mass":
@@ -356,16 +431,17 @@ def selectCatagory():
         selectTemperature()
     elif selection == "Time":
         selectTime()
+    elif selection == "Speed":
+        selectSpeed()
     elif selection == "Quit":
         endProgram()
     else:
-        print("It seems you selected an unsupported catagory, please try again")
-        selectCatagory()
+        print("It seems you selected an unsupported category, please try again")
+        selectCategory()
 
 
 #startOfProgram
-print("\nThis program is created for the purposes of converting Units of Meassurement")
+print("\nThis program is created for the purposes of converting Units of Measurement")
 print("Enter \"Quit\" at any time to terminate the program manually.")
 print("In order to protect the user, the program will terminate if invalid input is detected three (3) times, consecutively.")
-print("Please note that this program is case  sensitive.")
-selectCatagory()
+selectCategory()
