@@ -17,12 +17,12 @@
   <p align="center">
     Funcion-heavy and simplistic unit converter for distances, masses, temperatures and time conversions. 
     <br />
-    <a href="https://github.com/Bearded-Viking/UnitConverter/"><strong>View Source Code »</strong></a>
+    <a href="https://github.com/John-JonSteyn/UnitConverter/"><strong>View Source Code »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Bearded-Viking/UnitConverter/issues">Report Bug</a>
+    <a href="https://github.com/John-JonSteyn/UnitConverter/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Bearded-Viking/UnitConverter/issues">Request Feature</a>
+    <a href="https://github.com/John-JonSteyn/UnitConverter/issues">Request Feature</a>
   </p>
 </div>
 
@@ -146,7 +146,7 @@ How to download the lastest version of Python:
   ```
 3. Clone the repository by entering the following command into your shell:
    ```sh
-   git clone https://github.com/Bearded-Viking/UnitConverter.git
+   git clone https://github.com/John-JonSteyn/UnitConverter.git
    ```
 It's that simple! You can run Unit converter with following command:
 
@@ -161,7 +161,7 @@ It's that simple! You can run Unit converter with following command:
 <!-- USAGE EXAMPLES -->
 ## The Basics of Unit Converter
 
-[![Unit Converter Main][screenshot-main]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotMain.png))
+[![Unit Converter Main][screenshot-main]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotMain.png))
 When you run the script, this message will be displayed. From here we can select which dimention we would like to convert in.
 
 ### Distance
@@ -170,35 +170,35 @@ To select Distance, we'll just type it out:
   Distance
   ```
 
-[![Distance Enter Value][screenshot-distance-enter-value]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotDistanceEnterValue.png))
+[![Distance Enter Value][screenshot-distance-enter-value]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotDistanceEnterValue.png))
 
 Now we select a unit we'd like to convert from, for example:
   ```sh
   Meter
   ```
 
-[![Distance Select][screenshot-distance-select]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotDistanceSelect.png))
+[![Distance Select][screenshot-distance-select]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotDistanceSelect.png))
 Next enter the value of our unit, for illustation
   ```sh
   273
   ```
 
-[![Distance Output][screenshot-distance-output]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotDistanceOutput.png))
+[![Distance Output][screenshot-distance-output]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotDistanceOutput.png))
 
 Now we have our measurement converted and returned to us in each of the units.
 We are also sent back to the main menu.
 
 ### Mass
 Mass follows the same logic, as can be seen here:
-[![Mass][screenshot-mass]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotMass.png))
+[![Mass][screenshot-mass]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotMass.png))
 
 ### Temperature
 As is the case with Temperature:
-[![Temperature][screenshot-temperature]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotTemperature.png))
+[![Temperature][screenshot-temperature]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotTemperature.png))
 
 ### Time
 And, not surprisingly, Time is no different:
-[![Time][screenshot-time]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotTime.png))
+[![Time][screenshot-time]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotTime.png))
 
 ### Speed
 Same with speed. Who would've thought:
@@ -209,7 +209,7 @@ You can also quit the program at any time by typing:
   ```sh
   Quit
   ```
-[![Quit][screenshot-quit]]((https://github.com/Bearded-Viking/UnitConverter/blob/main/images/screenshotQuit.png))
+[![Quit][screenshot-quit]]((https://github.com/John-JonSteyn/UnitConverter/blob/main/images/screenshotQuit.png))
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -222,7 +222,7 @@ You can also quit the program at any time by typing:
 - [ ] Improve Output Appearance
 - [ ] Add option to utilise acronyms as input
 
-See the [open issues](https://github.com/Bearded-Viking/UnitConverter/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/John-JonSteyn/UnitConverter/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -270,16 +270,16 @@ I'd also like to acknowledge and recommend these resources that made the learnin
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/Bearded-Viking/UnitConverter.svg?style=for-the-badge
-[contributors-url]: https://github.com/Bearded-Viking/UnitConverter/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Bearded-Viking/UnitConverter.svg?style=for-the-badge
-[forks-url]: https://github.com/Bearded-Viking/UnitConverter/network/members
-[stars-shield]: https://img.shields.io/github/stars/Bearded-Viking/UnitConverter.svg?style=for-the-badge
-[stars-url]: https://github.com/Bearded-Viking/UnitConverter/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Bearded-Viking/UnitConverter.svg?style=for-the-badge
-[issues-url]: https://github.com/Bearded-Viking/UnitConverter/issues
-[license-shield]: https://img.shields.io/github/license/Bearded-Viking/TaskFlow.svg?style=for-the-badge
-[license-url]: https://github.com/Bearded-Viking/UnitConverter/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/John-JonSteyn/UnitConverter.svg?style=for-the-badge
+[contributors-url]: https://github.com/John-JonSteyn/UnitConverter/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/John-JonSteyn/UnitConverter.svg?style=for-the-badge
+[forks-url]: https://github.com/John-JonSteyn/UnitConverter/network/members
+[stars-shield]: https://img.shields.io/github/stars/John-JonSteyn/UnitConverter.svg?style=for-the-badge
+[stars-url]: https://github.com/John-JonSteyn/UnitConverter/stargazers
+[issues-shield]: https://img.shields.io/github/issues/John-JonSteyn/UnitConverter.svg?style=for-the-badge
+[issues-url]: https://github.com/John-JonSteyn/UnitConverter/issues
+[license-shield]: https://img.shields.io/github/license/John-JonSteyn/TaskFlow.svg?style=for-the-badge
+[license-url]: https://github.com/John-JonSteyn/UnitConverter/blob/master/LICENSE.txt
 
 [screenshot-distance-enter-value]: images/screenshotDistanceEnterValue.png
 [screenshot-distance-output]:images/screenshotDistanceOutput.png
