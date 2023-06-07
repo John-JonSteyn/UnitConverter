@@ -131,24 +131,24 @@ def main():
     measurement_unit = get_measurement_unit(conversion_type)
     value = get_float_input(f"Enter the value in {measurement_unit}: ")
 
-    if conversion_type == "1":  # Temperature
+    if conversion_type == "1":
         if measurement_unit == "°C":
             fahrenheit = celsius_to_fahrenheit(value)
             print(f"{value}°C is equal to {fahrenheit}°F")
         else:
             celsius = fahrenheit_to_celsius(value)
             print(f"{value}°F is equal to {celsius}°C")
-    elif conversion_type == "2":  # Distance
+    elif conversion_type == "2":
         units = ["mm", "cm", "m", "km", "inch", "feet", "yard", "mile"]
         for unit in units:
             converted_distance = convert_distance(value, measurement_unit, unit)
             print(f"{value} {measurement_unit} is equal to {converted_distance} {unit}")
-    elif conversion_type == "3":  # Mass
+    elif conversion_type == "3":
         units = ["mg", "g", "kg", "t", "ounce", "pounds"]
         for unit in units:
             converted_mass = convert_mass(value, measurement_unit, unit)
             print(f"{value} {measurement_unit} is equal to {converted_mass} {unit}")
-    elif conversion_type == "4":  # Speed
+    elif conversion_type == "4":
         units = ["m/s", "km/h", "yards/s", "miles/h", "knots"]
         for unit in units:
             converted_speed = convert_speed(value, measurement_unit, unit)
