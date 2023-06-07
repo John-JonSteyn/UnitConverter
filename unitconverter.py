@@ -1,20 +1,29 @@
+import time
+import sys
+
+def print_slow(text):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.02)
+
 def get_conversion_type():
+    print_slow("\nSelect the type of conversion:")
+    print_slow("\n1. Temperature")
+    print_slow("\n2. Distance")
+    print_slow("\n3. Mass")
+    print_slow("\n4. Speed")
+    print_slow("\n5. Exit")
+    
     while True:
-        print("\nSelect the type of conversion:")
-        print("1. Temperature")
-        print("2. Distance")
-        print("3. Mass")
-        print("4. Speed")
-        print("5. Exit")
-        
-        choice = input("Enter your choice (1-5): ")
+        choice = input("\nEnter your choice (1-5): ")
         
         if choice in ["1", "2", "3", "4"]:
             return choice
         elif choice == "5":
             return None
         
-        print("Invalid choice. Please try again.")
+        print_slow("Invalid choice. Please try again.")
 
 
 def get_measurement_unit(conversion_type):
@@ -52,20 +61,20 @@ def get_measurement_unit(conversion_type):
     
     choices = units[conversion_type]
     
+    print_slow(f"\nSelect the {conversion_type.lower()} unit:")
+    for i, unit in enumerate(choices.values(), start=1):
+        print_slow(f"\n{i}. {unit}")
+    print_slow(f"\n{len(choices) + 1}. Return")
+    
     while True:
-        print(f"\nSelect the {conversion_type.lower()} unit:")
-        for i, unit in enumerate(choices.values(), start=1):
-            print(f"{i}. {unit}")
-        print(f"{len(choices) + 1}. Return")
-        
-        choice = input(f"Enter your choice (1-{len(choices) + 1}): ")
+        choice = input(f"\nEnter your choice (1-{len(choices) + 1}): ")
         
         if choice in choices:
             return choices[choice]
         elif choice == str(len(choices) + 1):
             return None
         
-        print("Invalid choice. Please try again.")
+        print_slow("Invalid choice. Please try again.")
 
 def get_float_input(prompt):
     while True:
@@ -73,7 +82,7 @@ def get_float_input(prompt):
             value = float(input(prompt))
             return value
         except ValueError:
-            print("Invalid input. Please enter a numeric value.")
+            print_slow("Invalid input. Please enter a numeric value.")
 
 def celsius_to_fahrenheit(celsius):
     return (celsius * 9 / 5) + 32
@@ -117,56 +126,55 @@ def convert_mass(mass, from_unit, to_unit):
 
 def convert_speed(speed, from_unit, to_unit):
     conversion_factors = {
-        "m/s": {"m/s": 1, "km/h": 3.6, "yards/s": 1.0936133, "miles/h": 2.2369363, "knots": 1.9438445},
-        "km/h": {"m/s": 0.2777778, "km/h": 1, "yards/s": 0.9113444, "miles/h": 0.6213712, "knots": 0.5399568},
-        "yards/s": {"m/s": 0.9144, "km/h": 1.09728, "yards/s": 1, "miles/h": 0.6818182, "knots": 0.5924838},
-        "miles/h": {"m/s": 0.44704, "km/h": 1.609344, "yards/s": 1.4666667, "miles/h": 1, "knots": 0.8689762},
-        "knots": {"m/s": 0.5144444, "km/h": 1.852, "yards/s": 1.6878099, "miles/h": 1.1507794, "knots": 1}
+        "m/s": {"m/s": 1, "km/h": 3.6, "yards/s": 1.09361, "miles/h": 2.23694, "knots": 1.94384},
+        "km/h": {"m/s": 0.277778, "km/h": 1, "yards/s": 0.09144, "miles/h": 0.621371, "knots": 0.539957},
+        "yards/s": {"m/s": 0.9144, "km/h": 1.09728, "yards/s": 1, "miles/h": 0.568182, "knots": 0.493737},
+        "miles/h": {"m/s": 0.44704, "km/h": 1.60934, "yards/s": 1.76000, "miles/h": 1, "knots": 0.868976},
+        "knots": {"m/s": 0.514444, "km/h": 1.852, "yards/s": 1.09728, "miles/h": 1.15078, "knots": 1}
     }
     
     return speed * conversion_factors[from_unit][to_unit]
 
-def main():
-    print("Welcome to the Unit Converter!")
 
+def main():
+    print_slow("Welcome to the Unit Converter!")
+    
     while True:
         conversion_type = get_conversion_type()
-
+        
         if conversion_type is None:
-            print("Exiting the program...!")
+            print_slow("\nExiting the program . . . ")
+            time.sleep(0.02)
             break
-
-        from_unit = get_measurement_unit(conversion_type)
-
-        if from_unit is None:
+        
+        unit_from = get_measurement_unit(conversion_type)
+        
+        if unit_from is None:
             continue
-
-        to_unit = get_measurement_unit(conversion_type)
-
-        if to_unit is None:
+        
+        unit_to = get_measurement_unit(conversion_type)
+        
+        if unit_to is None:
             continue
-
-        value = get_float_input("Enter the value to convert: ")
-
+        
+        value = get_float_input(f"\nEnter the value in {unit_from}: ")
+        
         if conversion_type == "1":
-            if from_unit == "°C" and to_unit == "°F":
-                result = celsius_to_fahrenheit(value)
-                print(f"{value}°C = {result}°F")
-            elif from_unit == "°F" and to_unit == "°C":
-                result = fahrenheit_to_celsius(value)
-                print(f"{value}°F = {result}°C")
-
+            if unit_from == "°C" and unit_to == "°F":
+                converted_value = celsius_to_fahrenheit(value)
+                print_slow(f"\n{value} {unit_from} is equal to {converted_value} {unit_to}.")
+            elif unit_from == "°F" and unit_to == "°C":
+                converted_value = fahrenheit_to_celsius(value)
+                print_slow(f"\n{value} {unit_from} is equal to {converted_value} {unit_to}.")
         elif conversion_type == "2":
-            result = convert_distance(value, from_unit, to_unit)
-            print(f"{value}{from_unit} = {result}{to_unit}")
-
+            converted_value = convert_distance(value, unit_from, unit_to)
+            print_slow(f"\n{value} {unit_from} is equal to {converted_value} {unit_to}.")
         elif conversion_type == "3":
-            result = convert_mass(value, from_unit, to_unit)
-            print(f"{value}{from_unit} = {result}{to_unit}")
-
+            converted_value = convert_mass(value, unit_from, unit_to)
+            print_slow(f"\n{value} {unit_from} is equal to {converted_value} {unit_to}.")
         elif conversion_type == "4":
-            result = convert_speed(value, from_unit, to_unit)
-            print(f"{value}{from_unit} = {result}{to_unit}")
+            converted_value = convert_speed(value, unit_from, unit_to)
+            print_slow(f"\n{value} {unit_from} is equal to {converted_value} {unit_to}.")
 
 if __name__ == "__main__":
     main()
