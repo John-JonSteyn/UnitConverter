@@ -1,10 +1,18 @@
 def get_conversion_type():
-    print("\nSelect the type of conversion:")
-    print("1. Temperature")
-    print("2. Distance")
-    print("3. Mass")
-    print("4. Speed")
-    return input("Enter your choice (1-4): ")
+    while True:
+        print("\nSelect the type of conversion:")
+        print("1. Temperature")
+        print("2. Distance")
+        print("3. Mass")
+        print("4. Speed")
+        
+        choice = input("Enter your choice (1-4): ")
+        
+        if choice in ["1", "2", "3", "4"]:
+            return choice
+        
+        print("Invalid choice. Please try again.")
+
 
 def get_measurement_unit(conversion_type):
     units = {
@@ -38,12 +46,20 @@ def get_measurement_unit(conversion_type):
             "5": "knots"
         }
     }
-    print(f"\nSelect the {conversion_type.lower()} unit:")
+    
     choices = units[conversion_type]
-    for i, unit in enumerate(choices.values(), start=1):
-        print(f"{i}. {unit}")
-    choice = input(f"Enter your choice (1-{len(choices)}): ")
-    return choices[choice]
+    
+    while True:
+        print(f"\nSelect the {conversion_type.lower()} unit:")
+        for i, unit in enumerate(choices.values(), start=1):
+            print(f"{i}. {unit}")
+        
+        choice = input(f"Enter your choice (1-{len(choices)}): ")
+        
+        if choice in choices:
+            return choices[choice]
+        
+        print("Invalid choice. Please try again.")
 
 def get_float_input(prompt):
     while True:
