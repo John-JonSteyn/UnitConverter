@@ -7,46 +7,43 @@ def get_conversion_type():
     return input("Enter your choice (1-4): ")
 
 def get_measurement_unit(conversion_type):
-    if conversion_type == "1":
-        print("\nSelect the temperature unit:")
-        print("1. Celsius (°C)")
-        print("2. Fahrenheit (°F)")
-        choice = input("Enter your choice (1-2): ")
-        return "°C" if choice == "1" else "°F"
-    elif conversion_type == "2":
-        print("\nSelect the distance unit:")
-        print("1. Millimeter (mm)")
-        print("2. Centimeter (cm)")
-        print("3. Meter (m)")
-        print("4. Kilometer (km)")
-        print("5. Inch")
-        print("6. Feet")
-        print("7. Yard")
-        print("8. Mile")
-        choice = input("Enter your choice (1-8): ")
-        units = ["mm", "cm", "m", "km", "inch", "feet", "yard", "mile"]
-        return units[int(choice) - 1]
-    elif conversion_type == "3":
-        print("\nSelect the mass unit:")
-        print("1. Milligram (mg)")
-        print("2. Gram (g)")
-        print("3. Kilogram (kg)")
-        print("4. Ton (t)")
-        print("5. Ounce")
-        print("6. Pound")
-        choice = input("Enter your choice (1-6): ")
-        units = ["mg", "g", "kg", "t", "ounce", "pounds"]
-        return units[int(choice) - 1]
-    elif conversion_type == "4":
-        print("\nSelect the speed unit:")
-        print("1. Meter/second (m/s)")
-        print("2. Kilometer/hour (km/h)")
-        print("3. Yards/second (yards/s)")
-        print("4. Miles/hour (miles/h)")
-        print("5. Knots")
-        choice = input("Enter your choice (1-5): ")
-        units = ["m/s", "km/h", "yards/s", "miles/h", "knots"]
-        return units[int(choice) - 1]
+    units = {
+        "1": {
+            "1": "°C",
+            "2": "°F"
+        },
+        "2": {
+            "1": "mm",
+            "2": "cm",
+            "3": "m",
+            "4": "km",
+            "5": "inch",
+            "6": "feet",
+            "7": "yard",
+            "8": "mile"
+        },
+        "3": {
+            "1": "mg",
+            "2": "g",
+            "3": "kg",
+            "4": "t",
+            "5": "ounce",
+            "6": "pounds"
+        },
+        "4": {
+            "1": "m/s",
+            "2": "km/h",
+            "3": "yards/s",
+            "4": "miles/h",
+            "5": "knots"
+        }
+    }
+    print(f"\nSelect the {conversion_type.lower()} unit:")
+    choices = units[conversion_type]
+    for i, unit in enumerate(choices.values(), start=1):
+        print(f"{i}. {unit}")
+    choice = input(f"Enter your choice (1-{len(choices)}): ")
+    return choices[choice]
 
 def get_float_input(prompt):
     while True:
